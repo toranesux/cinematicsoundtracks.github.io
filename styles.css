@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header styling */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px; 
+    border-bottom: 1px solid #e0e0ee;
+    border: none;
+    box-shadow: none;
+}
+
+.title {
+    font-size: 12px;
+    font-weight: bold;
+    color: #121212;
+}
+
+.slogan {
+    font-size: 10px;
+    color: lightgrey;
+    text-align: center;
+    flex-grow: 1;
+}
+
+/* Dropdown container styles */
+.dropdown-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Dropdown list styling */
+
+.dropdown {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
+}
+
+.dropdown li {
+    display: inline;
+}
+
+.dropdown li a {
+    text-decoration: none;
+    color: lightgrey;
+    font-size: 35px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Default color for "All" link */
+.dropdown li a.active {
+    color: lightgrey; /* Default to grey when no hover or active */
+}
+
+/* Change color on hover or active */
+.dropdown li a:hover,
+.dropdown li a.active {
+    color: #0C0C0C; /* Black on hover or when active */
+}
+
+/* Grid container with 5 items per row */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 items per row */
+    grid-template-rows: auto; /* Automatically adjust row height */
+    gap: 20px; /* Spacing between grid items */
+    padding: 10px; /* Padding around the grid */
+}
+
+/* Updated Grid Item Style */
+.grid-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Prevents overflow of GIFs */
+    width: 100%; /* Make it responsive */
+    border-radius: 15px; /* Rounded corners */
+    aspect-ratio: 16 / 9; /* Uniform size for all items */
+    background-color: transparent; /* Remove gray background */
+}
+
+/* Ensure GIFs fill the grid item entirely */
+.grid-item img {
+    width: 430px; /* Stretch to fill */
+    height: 100%; /* Stretch to fill */
+    object-fit: cover; /* Crop excess to maintain a consistent fill */
+    border-radius: 15px; /* Match grid-item's rounded edges */
+    display: block; /* Prevents any inline spacing issues */
+    background: none; /* Ensures no unwanted background colors */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+/* Scale image on hover */
+.grid-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Description container (hidden by default) */
+.description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Fade-in effect */
+    font-size: 0.8rem;
+}
+
+/* Show description on hover */
+.grid-item:hover .description {
+    opacity: 1;
+}
